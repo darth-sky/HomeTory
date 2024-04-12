@@ -25,8 +25,6 @@ class _TambahRuanganScreenState extends State<TambahRuanganScreen> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  // Tambahkan kode untuk tindakan yang diambil saat tombol ditekan
-                  // Misalnya, buka kamera
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(40.0), 

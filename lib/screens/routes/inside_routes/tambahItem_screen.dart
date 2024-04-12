@@ -26,7 +26,6 @@ class _TambahItemScreenState extends State<TambahItemScreen> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  // Tambahkan kode untuk tindakan yang diambil saat tombol ditekan
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(40.0),
@@ -63,7 +62,6 @@ class _TambahItemScreenState extends State<TambahItemScreen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Lakukan sesuatu dengan data yang disimpan
                 },
                 child: Text('Tambah'),
               ),

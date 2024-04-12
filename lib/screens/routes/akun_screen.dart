@@ -57,7 +57,6 @@ class _AkunScreenState extends State<AkunScreen> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Lakukan sesuatu dengan data nama dan email yang disimpan
                 },
                 child: Text('Save'),
               ),

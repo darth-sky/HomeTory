@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(), // Menampilkan halaman login pertama kali
+      home: LoginPage(), 
     );
   }
 }
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     ListTile(
                       leading: Icon(Icons.newspaper),
-                      title: Text('News Feed'),
+                      title: Text('Latihan API'),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     ListTile(
                       leading: Icon(Icons.storage),
-                      title: Text('CRUD SQLITE'),
+                      title: Text('Latihan CRUD SQLITE'),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
