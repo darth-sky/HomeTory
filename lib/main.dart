@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   accountName: Text('Dewa Putu Aditya Gunawan'),
                   accountEmail: Text('2215091047'),
                   currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/profil.jpeg'),
+                    backgroundImage: AssetImage('assets/images/pfp.jpg'),
                   ),
                   decoration: BoxDecoration(color: Colors.blueGrey),
                 ),

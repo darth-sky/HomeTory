@@ -5,6 +5,7 @@ import 'package:my_app/components/ContainerWidget.dart';
 import 'package:my_app/components/asset_image_widget.dart';
 import 'package:my_app/components/barangwidget.dart';
 import 'package:my_app/components/custom_search_delegate.dart';
+import 'package:my_app/screens/routes/edit_kamar.dart';
 import 'package:my_app/screens/routes/inside_routes/kipas_screen.dart';
 import 'package:my_app/screens/routes/inside_routes/lemari_screen.dart';
 import 'package:my_app/screens/routes/inside_routes/tambahContainer_screen.dart';
@@ -28,11 +29,20 @@ class _KamartdrScreenState extends State<KamartdrScreen> {
         actions: [
           IconButton(
               onPressed: () {
-                showSearch(context: context, delegate: CustomSearchDelegate(),);
+                showSearch(
+                  context: context,
+                  delegate: CustomSearchDelegate(),
+                );
               },
               icon: Icon(Icons.search)),
-              IconButton(
+          IconButton(
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EditKamar(),
+                  ),
+                );
               },
               icon: Icon(Icons.edit)),
         ],
@@ -108,9 +118,9 @@ class _KamartdrScreenState extends State<KamartdrScreen> {
                                     ),
                                   );
                                 },
-                              child: BarangWidget(
-                                  imageUrl: 'assets/images/kipas_angin.jpg',
-                                  containerName: 'Kipas Angin'),
+                                child: BarangWidget(
+                                    imageUrl: 'assets/images/kipas_angin.jpg',
+                                    containerName: 'Kipas Angin'),
                               ),
                             ],
                           ),

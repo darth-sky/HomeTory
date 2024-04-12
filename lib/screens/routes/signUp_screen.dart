@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     height: 10,
                   ),
                   Text(
-                    "Create your account",
+                    "Buat Akun",
                     style: TextStyle(fontSize: 15, color: Colors.grey[700]),
                   )
                 ],
@@ -87,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 20),
                   TextField(
                     decoration: InputDecoration(
-                      hintText: "Confirm Password",
+                      hintText: "Konfirmasi Password",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(18),
                           borderSide: BorderSide.none),
@@ -105,8 +105,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MyHomePage(title: 'Home Screen',)));
-                          
+                          MaterialPageRoute(
+                              builder: (context) => MyHomePage(
+                                    title: 'Home Screen',
+                                  )));
                     },
                     child: const Text(
                       "Sign up",
@@ -118,54 +120,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       backgroundColor: Colors.blueGrey,
                     ),
                   )),
-              const Center(child: Text("Or")),
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  border: Border.all(
-                    color: Colors.blueGrey,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.white.withOpacity(0.5),
-                      spreadRadius: 1,
-                      blurRadius: 1,
-                      offset: const Offset(0, 1),
-                    ),
-                  ],
-                ),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 30.0,
-                        width: 30.0,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/google.png'),
-                              fit: BoxFit.cover),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      const Text(
-                        "Sign In with Google",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const Text("Already have an account?"),
+                  const Text("Sudah Memiliki Akun?"),
                   TextButton(
                     onPressed: () {
                       Navigator.pushAndRemoveUntil(

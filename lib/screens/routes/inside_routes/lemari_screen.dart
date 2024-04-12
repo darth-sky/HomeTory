@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/components/barangwidget.dart';
 import 'package:my_app/components/custom_search_delegate.dart';
+import 'package:my_app/screens/routes/edit_container.dart';
 import 'package:my_app/screens/routes/inside_routes/polo_screen.dart';
 import 'package:my_app/screens/routes/inside_routes/tambahContainer_screen.dart';
 import 'package:my_app/screens/routes/inside_routes/tambahItem_screen.dart';
@@ -22,11 +23,20 @@ class _LemariScreenState extends State<LemariScreen> {
         actions: [
           IconButton(
               onPressed: () {
-                showSearch(context: context, delegate: CustomSearchDelegate(),);
+                showSearch(
+                  context: context,
+                  delegate: CustomSearchDelegate(),
+                );
               },
               icon: Icon(Icons.search)),
-              IconButton(
+          IconButton(
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EditContainer(),
+                  ),
+                );
               },
               icon: Icon(Icons.edit)),
         ],
@@ -40,7 +50,7 @@ class _LemariScreenState extends State<LemariScreen> {
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                    'Lokasi: Kamar Tidur', 
+                    'Lokasi: Kamar Tidur',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -49,8 +59,7 @@ class _LemariScreenState extends State<LemariScreen> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                        20), 
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.5),
@@ -61,8 +70,7 @@ class _LemariScreenState extends State<LemariScreen> {
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                        20), 
+                    borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
                       'assets/images/bedroom.jpg',
                       fit: BoxFit.cover,
@@ -78,8 +86,7 @@ class _LemariScreenState extends State<LemariScreen> {
             Center(
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                      20), 
+                  borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
@@ -90,8 +97,7 @@ class _LemariScreenState extends State<LemariScreen> {
                   ],
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(
-                      20), 
+                  borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
                     'assets/images/lemari.jpg',
                     fit: BoxFit.cover,

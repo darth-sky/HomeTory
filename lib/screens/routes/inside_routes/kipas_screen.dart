@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/routes/edit_kipas.dart';
 
 class KipasScreen extends StatefulWidget {
   const KipasScreen({Key? key}) : super(key: key);
@@ -107,9 +108,7 @@ class _KipasScreenState extends State<KipasScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          
-        },
+        onPressed: () {},
         backgroundColor: Colors.blueGrey,
         child: PopupMenuButton(
           itemBuilder: (context) => [
@@ -122,6 +121,16 @@ class _KipasScreenState extends State<KipasScreen> {
               value: "hapus_item",
             ),
           ],
+          onSelected: (value) {
+            if (value == "edit_item") {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EditKipas()),
+              );
+            } else if (value == "hapus_item") {
+
+            }
+          },
         ),
       ),
     );

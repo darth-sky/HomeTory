@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/components/barangwidget.dart';
+import 'package:my_app/screens/routes/edit_item.dart';
 
 class PoloScreen extends StatefulWidget {
   const PoloScreen({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _PoloScreenState extends State<PoloScreen> {
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                    'Lokasi: Kamar Tidur > Lemari', 
+                    'Lokasi: Kamar Tidur > Lemari',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -34,8 +35,7 @@ class _PoloScreenState extends State<PoloScreen> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                        20), 
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.5),
@@ -46,8 +46,7 @@ class _PoloScreenState extends State<PoloScreen> {
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                        20), 
+                    borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
                       'assets/images/lemari.jpg',
                       fit: BoxFit.cover,
@@ -63,8 +62,7 @@ class _PoloScreenState extends State<PoloScreen> {
             Center(
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                      20), 
+                  borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
@@ -75,8 +73,7 @@ class _PoloScreenState extends State<PoloScreen> {
                   ],
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(
-                      20), 
+                  borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
                     'assets/images/baju_polo.jpg',
                     fit: BoxFit.cover,
@@ -121,6 +118,15 @@ class _PoloScreenState extends State<PoloScreen> {
               value: "hapus_item",
             ),
           ],
+          onSelected: (value) {
+            if (value == "edit_item") {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EditItem()),
+              );
+            } else if (value == "hapus_item") {
+            }
+          },
         ),
       ),
     );

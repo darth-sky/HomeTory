@@ -84,35 +84,28 @@ class _SecondScreenState extends State<SecondScreen> {
       body: ListView(
         children: [
           ListTile(
-            title: Text('Notification'),
-            trailing: Switch(
-              value: _isNotificationEnabled,
-              onChanged: _toggleNotification,
-            ),
-          ),
-          ListTile(
-            title: Text('Sound'),
+            title: Text('Suara'),
             trailing: Switch(
               value: _isSoundEnabled,
               onChanged: _toggleSound,
             ),
           ),
           ListTile(
-            title: Text('Dark Mode'),
+            title: Text('Mode Gelap'),
             trailing: Switch(
               value: _isDarkModeEnabled,
               onChanged: _toggleDarkMode,
             ),
           ),
           ListTile(
-            title: Text('Font Size'),
+            title: Text('Ukuran Font'),
             trailing: IconButton(
               icon: Icon(Icons.arrow_forward_ios),
               onPressed: _changeFontSize,
             ),
           ),
           ListTile(
-            title: Text('Language'),
+            title: Text('Bahasa'),
             trailing: IconButton(
               icon: Icon(Icons.arrow_forward_ios),
               onPressed: _changeLanguage,

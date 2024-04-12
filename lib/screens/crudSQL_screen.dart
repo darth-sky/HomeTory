@@ -89,7 +89,7 @@ class _CrudSQLScreenState extends State<CrudSQLScreen> {
               controller: _titleController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "Title",
+                hintText: "Nama Ruangan",
               ),
             ),
             SizedBox(
@@ -100,7 +100,7 @@ class _CrudSQLScreenState extends State<CrudSQLScreen> {
               maxLines: 4,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "Description",
+                hintText: "Jumlah Barang",
               ),
             ),
             SizedBox(
@@ -110,7 +110,7 @@ class _CrudSQLScreenState extends State<CrudSQLScreen> {
               controller: _imageUrlController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "Image URL",
+                hintText: "Gambar Ruangan",
               ),
             ),
             SizedBox(
@@ -182,7 +182,7 @@ class _CrudSQLScreenState extends State<CrudSQLScreen> {
                         ),
                       ),
                       Text(
-                        "Jumlah Container: ${_allData[index]['desc']}",
+                        "Jumlah Barang: ${_allData[index]['desc']}",
                         style: TextStyle(fontSize: 15),
                       ),
                       Row(

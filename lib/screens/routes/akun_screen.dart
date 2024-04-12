@@ -17,7 +17,7 @@ class _AkunScreenState extends State<AkunScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("Account"),
+        title: Text("Profile"),
         backgroundColor: Colors.blueGrey,
       ),
       body: Center(
@@ -30,7 +30,7 @@ class _AkunScreenState extends State<AkunScreen> {
                 borderRadius: BorderRadius.circular(
                     125),
                 child: Image.asset(
-                  'assets/images/profil.jpeg',
+                  'assets/images/pfp.jpg',
                   width: 250,
                   height: 250,
                   fit: BoxFit.cover, 

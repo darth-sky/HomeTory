@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
-class TambahItemScreen extends StatefulWidget {
-  const TambahItemScreen({Key? key}) : super(key: key);
+class EditItem extends StatefulWidget {
+  const EditItem({Key? key}) : super(key: key);
 
   @override
-  _TambahItemScreenState createState() => _TambahItemScreenState();
+  _EditItemState createState() => _EditItemState();
 }
 
-class _TambahItemScreenState extends State<TambahItemScreen> {
-  TextEditingController _itemController = TextEditingController();
-  TextEditingController _itemQtyController = TextEditingController();
-  TextEditingController _descQtyController = TextEditingController();
+class _EditItemState extends State<EditItem> {
+  TextEditingController _itemController =
+      TextEditingController(text: 'Baju Polo FTK');
+  TextEditingController _itemQtyController = TextEditingController(text: '1');
+  TextEditingController _descQtyController = TextEditingController(text: '-');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tambah Item'),
+        title: Text('Edit Baju Polo FTK'),
         backgroundColor: Colors.blueGrey,
       ),
       body: Center(
@@ -24,6 +25,14 @@ class _TambahItemScreenState extends State<TambahItemScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Container(
+                margin: EdgeInsets.zero,
+                child: Image.asset(
+                  'assets/images/baju_polo.jpg',
+                  width: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -31,8 +40,7 @@ class _TambahItemScreenState extends State<TambahItemScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),
-                  minimumSize:
-                      Size(110.0, 30.0), // Sesuaikan dengan keinginan Anda
+                  minimumSize: Size(110.0, 30.0),
                 ),
                 child: Icon(
                   Icons.camera_alt,
@@ -62,8 +70,13 @@ class _TambahItemScreenState extends State<TambahItemScreen> {
                     labelText: 'Deskripsi', border: OutlineInputBorder()),
               ),
               ElevatedButton(
-                onPressed: () {},
-                child: Text('Tambah'),
+                onPressed: () {
+                  String itemName = _itemController.text;
+                  if (itemName.isNotEmpty) {
+                    Navigator.pop(context, itemName);
+                  }
+                },
+                child: Text('Edit'),
               ),
             ],
           ),

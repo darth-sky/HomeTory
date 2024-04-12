@@ -24,18 +24,18 @@ class _TambahRuanganScreenState extends State<TambahRuanganScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.all(40.0), 
+                  padding: EdgeInsets.all(10.0),
                   shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(18.0), 
+                    borderRadius: BorderRadius.circular(18.0),
                   ),
+                  minimumSize:
+                      Size(110.0, 30.0), // Sesuaikan dengan keinginan Anda
                 ),
                 child: Icon(
-                  Icons.camera_alt, 
-                  size: 110.0, 
+                  Icons.camera_alt,
+                  size: 50.0,
                 ),
               ),
               SizedBox(
