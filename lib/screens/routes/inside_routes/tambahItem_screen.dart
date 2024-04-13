@@ -32,7 +32,7 @@ class _TambahItemScreenState extends State<TambahItemScreen> {
                     borderRadius: BorderRadius.circular(18.0),
                   ),
                   minimumSize:
-                      Size(110.0, 30.0), // Sesuaikan dengan keinginan Anda
+                      Size(110.0, 30.0), 
                 ),
                 child: Icon(
                   Icons.camera_alt,

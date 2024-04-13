@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const SettingScreen(),
-    const ProfileScreen(),
+    const BarangScreen(),
   ];
 
   final List<String> _appBarTitles = const [

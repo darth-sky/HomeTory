@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
     String username = usernameController.text.trim();
     String password = passwordController.text.trim();
 
-    if (username == 'a' && password == 'a') {
+    if (username == 'admin' && password == 'admin') {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/routes/second_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class BarangScreen extends StatelessWidget {
+  const BarangScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
