@@ -160,7 +160,7 @@ class _LongListScreenState extends State<LongListScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              DataService.deleteData(id);
+              DataService.deleteNews(id);
               Navigator.pop(context);
               setState(() {
                 _news = DataService.fetchNews();
@@ -219,7 +219,7 @@ class _LongListScreenState extends State<LongListScreen> {
           ),
           TextButton(
             onPressed: () {
-              DataService.updateData(post.id, post.title, post.body);
+              DataService.updateNews(post.id, post.title, post.body);
               Navigator.pop(context);
               setState(() {
                 _news = DataService.fetchNews();

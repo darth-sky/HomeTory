@@ -4,7 +4,10 @@ import 'package:my_app/components/asset_image_widget.dart';
 import 'package:my_app/components/custom_search_delegate.dart';
 import 'package:my_app/components/my_button.dart';
 import 'package:my_app/components/signUp_button.dart';
+import 'package:my_app/screens/APIbaru.dart';
 import 'package:my_app/screens/CrudSQL_screen.dart';
+import 'package:my_app/screens/UTS/issues_List_screen.dart';
+import 'package:my_app/screens/form_postuts.dart';
 import 'package:my_app/screens/home_screen.dart';
 import 'package:my_app/screens/login_page.dart';
 import 'package:my_app/screens/longList_screen.dart';
@@ -14,6 +17,8 @@ import 'package:my_app/screens/routes/second_screen.dart';
 import 'package:my_app/screens/routes/signUp_screen.dart';
 import 'package:my_app/screens/setting_screen.dart';
 import 'package:my_app/screens/profile_screen.dart';
+import 'package:my_app/screens/testuts.dart';
+import 'package:my_app/screens/uts_post_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -127,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     ListTile(
                       leading: Icon(Icons.newspaper),
-                      title: Text('Latihan API'),
+                      title: Text('Latihan API 1 News'),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -141,6 +146,33 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const CrudSQLScreen()),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.storage),
+                      title: Text('Latihan API 2 Datas'),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const APIbaru()),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.storage),
+                      title: Text('API UTS'),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Testuts()),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.storage),
+                      title: Text('coba post uts'),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FormPostUts()),
                       ),
                     ),
                   ],
