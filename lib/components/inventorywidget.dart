@@ -33,7 +33,7 @@ class RoomInventoryWidget extends StatelessWidget {
             height: 150,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(imageUrl),
+                image: NetworkImage(imageUrl),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(10),

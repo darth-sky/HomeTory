@@ -4,18 +4,29 @@ import 'package:my_app/components/asset_image_rounded.dart';
 import 'package:my_app/components/asset_image_widget.dart';
 import 'package:my_app/components/inventorywidget.dart';
 import 'package:my_app/components/text_container.dart';
+import 'package:my_app/dto/ruangan.dart';
+import 'package:my_app/endpoints/endpoint.dart';
 import 'package:my_app/screens/routes/inside_routes/tambahRuangan_screen.dart';
 import 'package:my_app/screens/routes/kamartdr_screen.dart';
 import 'package:my_app/screens/routes/second_screen.dart';
+import 'package:my_app/services/data_services.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future<List<Ruangan>>? _ruangan;
+
+  @override
+  void initState() {
+    super.initState();
+    _ruangan = DataService.fetchRuangan();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,53 +35,23 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => KamartdrScreen(),
-                      ),
-                    );
+                FutureBuilder<List<Ruangan>>(
+                  future: _ruangan,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      final data = snapshot.data!;
+                      return ListView.builder(
+                        itemCount: data.length,
+                        itemBuilder: (context, index) {
+                          final item = data[index];
+                          return Text(item.nama_ruangan);
+                        },
+                      );
+                    } else if (snapshot.hasError) {
+                      return Center(child: Text('${snapshot.error}'));
+                    }
+                    return const Center(child: CircularProgressIndicator());
                   },
-                  child: RoomInventoryWidget(
-                    imageUrl: 'assets/images/bedroom.jpg',
-                    roomName: 'Kamar Tidur',
-                    containerCount: 1,
-                    itemCount: 2,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => KamartdrScreen(),
-                      ),
-                    );
-                  },
-                  child: RoomInventoryWidget(
-                    imageUrl: 'assets/images/gudang.jpg',
-                    containerCount: 2,
-                    roomName: 'Gudang',
-                    itemCount: 4,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => KamartdrScreen(),
-                      ),
-                    );
-                  },
-                  child: RoomInventoryWidget(
-                    imageUrl: 'assets/images/living_room.jpg',
-                    containerCount: 2,
-                    roomName: 'Ruang Tamu',
-                    itemCount: 4,
-                  ),
                 ),
               ],
             ),
